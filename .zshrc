@@ -18,8 +18,3 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
-
-
-# Aliases
-export WINHOME=/mnt/c/Users/Timmy
-cd $WINHOME
