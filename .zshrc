@@ -17,4 +17,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
+# Set default editor
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
