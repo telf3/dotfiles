@@ -12,7 +12,7 @@ plugins=(
    colored-man-pages
    common-aliases
    ssh-agent
-   virtualenv
+   tmux
 )
 
 source $ZSH/oh-my-zsh.sh
