@@ -1,7 +1,7 @@
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/timmy/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="jreese"
