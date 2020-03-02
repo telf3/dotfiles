@@ -4,7 +4,7 @@ zstyle :omz:plugins:ssh-agent agent-forwarding on
 export ZSH="$HOME/.oh-my-zsh"
 
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="jreese"
+ZSH_THEME="telf"
 
 plugins=(
    git
