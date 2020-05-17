@@ -1,6 +1,4 @@
 ## install
 ```sh
-git clone https://github.com/timmyeb/dotfiles/ ~/
-cd ~/dotfiles
-./install
+git clone https://github.com/timmyeb/dotfiles/ $HOME && ~/dotfiles/install
 ```
