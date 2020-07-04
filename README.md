@@ -1,7 +1,8 @@
 # Installation
 ```
 git clone https://github.com/timmyeb/dotfiles/ $HOME
-~/dotfiles/install.sh
+cd ~/dotfiles
+./install.sh
 ```
 
 # Uninstallation
