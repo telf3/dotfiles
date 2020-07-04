@@ -1,17 +1,17 @@
 #!/bin/bash
 
-dotfiles_dir=~/dotfiles
-backup_dir=/tmp/$USER-dotfiles-backup
+# Find all dot files then if the original file exists, create a backup
+# Once backed up to {file}.dtbak symlink the new dotfile in place
+for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
+    if [ -e ~/$file ]; then
+        mv -f ~/$file{,.dtbak}
+    fi
+    ln -s $PWD/$file ~/$file
+done
 
-echo "Moving existing dotfiles to $backup_dir"
-mkdir -p $backup_dir
-cp -v ~/.zshrc $backup_dir 2> /dev/null
-cp -v ~/.vimrc $backup_dir 2> /dev/null
-cp -v ~/.tmux.conf $backup_dir 2> /dev/null
-cp -v ~/.bashrc $backup_dir 2> /dev/null
+# Install zsh theme 
+if [ -d "$HOME/.oh-my-zsh" ]; then
+	cp ./oh-my-zsh/themes/telf.zsh-theme ~/.oh-my-zsh/themes/telf.zsh-theme
+fi
 
-echo "Creating symlinks"
-ln -sfv $dotfiles_dir/zshrc ~/.zshrc
-ln -sfv $dotfiles_dir/vimrc ~/.vimrc
-ln -sfv $dotfiles_dir/tmux.conf ~/.tmux.conf
-ln -sfv $dotfiles_dir/oh-my-zsh/themes/telf.zsh-theme ~/.oh-my-zsh/themes/telf.zsh-theme
+echo "Installed"
