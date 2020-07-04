@@ -1,7 +1,8 @@
 set encoding=utf-8
 
 " Use the OS clipboard by default (on versions compiled with `+clipboard`)
-set clipboard=unnamed
+" install gvim or vim-gtk
+set clipboard=unnamedplus
 " Enable syntax highlithing
 syntax on
 " Search as characters are entered
