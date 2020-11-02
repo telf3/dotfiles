@@ -14,4 +14,8 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 	cp ./oh-my-zsh/themes/telf.zsh-theme ~/.oh-my-zsh/themes/telf.zsh-theme
 fi
 
+#Install vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo "Installed"
