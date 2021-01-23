@@ -14,8 +14,11 @@ if [ -d "$HOME/.oh-my-zsh" ]; then
 	cp ./oh-my-zsh/themes/telf.zsh-theme ~/.oh-my-zsh/themes/telf.zsh-theme
 fi
 
-#Install vim-plug
+# Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install tmux-plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Installed"
