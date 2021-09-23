@@ -11,7 +11,7 @@ done
 
 # Install zsh theme 
 if [ -d "$HOME/.oh-my-zsh" ]; then
-    cp ./telf.zsh-theme ~/.oh-my-zsh/themes/telf.zsh-theme
+    cp ./telf.zsh-theme ~/.oh-my-zsh/custom/themes/telf.zsh-theme
 fi
 
 echo "Installed"
