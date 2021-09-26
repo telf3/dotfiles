@@ -20,3 +20,8 @@ source $ZSH/oh-my-zsh.sh
 # Set default editor
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
