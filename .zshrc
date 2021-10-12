@@ -8,7 +8,6 @@ ZSH_THEME="telf"
 
 plugins=(
    git
-   zsh_reload
    colored-man-pages
    common-aliases
    ssh-agent
