@@ -2,15 +2,23 @@
 
 Ubuntu
 ```bash
-sudo apt install zsh vim tmux wget git
+sudo apt install zsh vim tmux wget git stow
 ```
 
 Arch
 ```bash
-sudo pacman -S zsh vim tmux wget git
+sudo pacman -S zsh vim tmux wget git stow
 ```
 
 Oh My Zsh
 ```bash
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+# Usage
+
+Install all
+```bash
+stow */
+```
+or stow vim, tmux etc.
