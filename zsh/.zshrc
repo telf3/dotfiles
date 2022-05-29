@@ -12,6 +12,7 @@ plugins=(
    common-aliases
    ssh-agent
    tmux
+   archlinux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -24,3 +25,8 @@ export VISUAL=/usr/bin/vim
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+# Vi mode
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+export KEYTIMEOUT=1

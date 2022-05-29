@@ -17,8 +17,8 @@ set relativenumber
 " tabs are spaces
 set expandtab
 " tabs are 4 spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 " Don’t add empty newlines at the end of files
 set noeol
 " Show the current mode
