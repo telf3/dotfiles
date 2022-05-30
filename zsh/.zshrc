@@ -30,3 +30,7 @@ fi
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
+
+# Sudo aliases
+alias sudo='sudo '
+alias pls='sudo $(fc -ln -1)'
