@@ -20,10 +20,9 @@ unsetopt beep
 bindkey -v
 
 # Compinit
-zstyle :compinstall filename '/home/timmy/.config/zsh/.zshrc'
-
-autoload -Uz compinit
-compinit
+zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Add plugins
 [ -f "$PLUGINS/fzf-tab/fzf-tab.plugin.zsh" ] && source $PLUGINS/fzf-tab/fzf-tab.plugin.zsh 
