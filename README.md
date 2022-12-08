@@ -17,8 +17,14 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 # Usage
 
-Install
+Install with stow
 ```bash
 stow */
 ```
-or stow vim, tmux etc.
+or stow vim, tmux etc.  
+
+Install without stow
+
+```bash
+cp -r zsh/.* ~
+```

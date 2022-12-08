@@ -24,7 +24,7 @@ set noeol
 " Show the current mode
 set showmode
 " Don't create swapfile
-set noswapfile
+" set noswapfile
 
 " Keybind, move to beginning/end of line
 nnoremap B ^
