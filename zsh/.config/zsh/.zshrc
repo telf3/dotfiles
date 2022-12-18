@@ -5,7 +5,7 @@ PLUGINS="$ZDOTDIR/plugins"
 [ -f "$HOME/.config/aliasrc"    ] && source $HOME/.config/aliasrc
 [ -f "$HOME/.config/functionrc" ] && source $HOME/.config/functionrc
 
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
