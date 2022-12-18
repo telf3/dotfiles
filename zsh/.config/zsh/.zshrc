@@ -1,5 +1,4 @@
 PLUGINS="$ZDOTDIR/plugins"
-#PROMPTS="$ZDOTDIR/prompts"
 
 # Import files
 [ -f "$ZDOTDIR/.zshenv"         ] && source $ZDOTDIR/.zshenv
