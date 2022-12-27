@@ -11,7 +11,7 @@ sudo pacman -S zsh vim tmux wget git fzf
 ```
 
 # Usage
-Install
+Install all
 ```bash
-cp -r zsh/.* ~
+find . -maxdepth 1 -type d \( ! -name . \) \( ! -name .git \) -exec bash -c "cd '{}' && cp -rv . ~" \;
 ```
