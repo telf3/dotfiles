@@ -17,6 +17,9 @@ unsetopt beep
 
 # Set Vi keymap
 bindkey -v
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 
 # Compinit
 zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
