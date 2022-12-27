@@ -3,7 +3,7 @@ PLUGINS="$ZDOTDIR/plugins"
 # Import files
 [ -f "$ZDOTDIR/.zshenv"         ] && source $ZDOTDIR/.zshenv
 [ -f "$HOME/.config/aliasrc"    ] && source $HOME/.config/aliasrc
-[ -f "$HOME/.config/aliashostrc" ] && source $HOME/.config/aliashostrc
+[ -f "$HOME/.config/functionrc" ] && source $HOME/.config/functionrc
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
