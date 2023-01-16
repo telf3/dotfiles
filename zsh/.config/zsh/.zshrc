@@ -23,7 +23,7 @@ bindkey  "^[[3~"  delete-char
 
 # Compinit
 zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
-autoload -Uz compinit && compinit
+autoload -Uz compinit chpwd_recent_dirs cdr add-zsh-hook && compinit add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Add plugins
