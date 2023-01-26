@@ -11,7 +11,7 @@ sudo pacman -S zsh vim tmux wget git fzf
 ```
 
 # Usage
-Install all
+Install all, this will replace any of the same existing files.  
 ```bash
-find . -maxdepth 1 -type d \( ! -name . \) \( ! -name .git \) -exec bash -c "cd '{}' && cp -rv . ~" \;
+./install.sh
 ```
