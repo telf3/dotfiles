@@ -1,7 +1,7 @@
 typeset -U path PATH
 
 # Add directories to PATH
-path=(~/bin $path)
+path=(~/bin ~/.local/bin $path)
 
 # Default ZSH directory
 export ZDOTDIR="$HOME/.config/zsh"
