@@ -12,6 +12,11 @@ SAVEHIST=10000
 # Change dir just by typing dirname
 setopt autocd
 
+# ls after cd
+chpwd() {
+  ls
+}
+
 # Turn off error beep
 unsetopt beep
 
