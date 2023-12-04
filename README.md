@@ -16,7 +16,7 @@ Install one
 cp -rv zsh/.* ~
 ```
 
-Install all, this will replace any of the same existing files.  
+Install all, this will replace any existing files.  
 ```bash
 ./install.sh
 ```
