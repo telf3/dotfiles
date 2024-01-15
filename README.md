@@ -1,22 +1,8 @@
 # Install dependencies
 
-Ubuntu
-```bash
-sudo apt install zsh vim tmux wget git fzf
-```
-
-Arch
-```bash
-sudo pacman -S zsh vim tmux wget git fzf
-```
-
 # Usage
-Install one
 ```bash
-cp -rv zsh/.* ~
-```
-
-Install all, this will replace any existing files.  
-```bash
+git clone https://github.com/telf3/dotfiles .dotfiles
+cd .dotfiles
 ./install.sh
 ```
