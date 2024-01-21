@@ -13,7 +13,7 @@ function ask() {
 }
 
 # Find all folders to include
-dirs=$(find . -maxdepth 1 -type d -not -name ".git" -not -name ".")
+dirs=$(find . -maxdepth 1 -type d -not -name ".git" -not -name "." -not -name "setup.sh")
 
 # Ask if each folder should be included
 for dir in $dirs; do
