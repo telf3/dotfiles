@@ -31,6 +31,9 @@ zstyle :compinstall filename "$HOME/.config/zsh/.zshrc"
 autoload -Uz compinit chpwd_recent_dirs cdr add-zsh-hook && compinit -d ~/.cache/.zcompdump add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+# z
+[ -f "/usr/share/z/z.sh" ] && . /usr/share/z/z.sh
+
 # Add plugins
 [ -f "$PLUGINS/fzf-tab/fzf-tab.plugin.zsh" ] && source $PLUGINS/fzf-tab/fzf-tab.plugin.zsh 
 [ -f "$PLUGINS/zsh-fzf-history-search/zsh-fzf-history-search.zsh" ] && source $PLUGINS/zsh-fzf-history-search/zsh-fzf-history-search.zsh
