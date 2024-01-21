@@ -1,13 +1,7 @@
-PLUGINS="$ZDOTDIR/plugins"
-
 # Import files
 [ -f "$ZDOTDIR/.zshenv"         ] && source $ZDOTDIR/.zshenv
 [ -f "$HOME/.config/aliasrc"    ] && source $HOME/.config/aliasrc
 [ -f "$HOME/.config/aliashostrc" ] && source $HOME/.config/aliashostrc
-
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
 
 # Change dir just by typing dirname
 setopt autocd
