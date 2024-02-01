@@ -18,15 +18,26 @@ dirs=$(find . -maxdepth 1 -type d -not -name ".git" -not -name "." -not -name "s
 # Ask if each folder should be included
 for dir in $dirs; do
   if ask "Include ${dir/'./'/''}?"; then
+
     # Get the files and folders we should link
     links=$(find $dir -maxdepth 2 -not -name ".config" -not -wholename $dir)
     for link in $links; do
+
+      # If there is a setup.sh, run it
+      if [[ $link =~ .*setup.sh$ ]]; then
+        echo "Running setup script: $link"
+        source $link
+        continue
+      fi
+
+      # Check if the destination alredy exist
       dest=${link/$dir/$HOME}
-      # Check if the destination alredy exists
       if [ ! -e "$dest" ]; then 
         ln -nsv $(realpath $link) $dest
       else
         echo "Symbolic link not created: '$dest' already exists." 
+
+        # Ask if we should remove it and link
         if ask "Remove [$dest]?"; then
           rm -rf $dest
           ln -nsv $(realpath $link) $dest
