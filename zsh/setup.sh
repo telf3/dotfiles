@@ -8,6 +8,9 @@ plugins["zsh-autosuggestions"]="git clone https://github.com/zsh-users/zsh-autos
 plugins["zsh-syntax-highlighting"]="git clone https://github.com/zsh-users/zsh-syntax-highlighting"
 plugins["colored-man-pages.plugin.zsh"]="curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh -o"
 
+if [ -z "$PLUGINS" ]; then
+  $PLUGINS = "$HOME/.config/zsh/plugins"
+fi
 mkdir -p $PLUGINS
 
 for plugin in "${!plugins[@]}"; do
