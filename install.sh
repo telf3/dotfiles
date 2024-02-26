@@ -1,48 +1,20 @@
 #!/bin/bash
 
-# Ask Y/n
-function ask() {
-    read -p "$1 (Y/n): " resp
-    if [ -z "$resp" ]; then
-        response_lc="y" # empty is Yes
-    else
-        response_lc=$(echo "$resp" | tr '[:upper:]' '[:lower:]') # case insensitive
-    fi
+# ZSH Plugins to install
+declare -A plugins
+plugins["fzf-tab"]="git clone https://github.com/Aloxaf/fzf-tab.git"
+plugins["zsh-fzf-history-search"]="git clone https://github.com/joshskidmore/zsh-fzf-history-search.git"
+plugins["zsh-autosuggestions"]="git clone https://github.com/zsh-users/zsh-autosuggestions.git"
+plugins["zsh-syntax-highlighting"]="git clone https://github.com/zsh-users/zsh-syntax-highlighting"
+plugins["colored-man-pages.plugin.zsh"]="curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh -o"
 
-    [ "$response_lc" = "y" ]
-}
+if [ -z "$PLUGINS" ]; then
+  $PLUGINS = "$HOME/.config/zsh/plugins"
+fi
+mkdir -p $PLUGINS
 
-# Find all folders to include
-dirs=$(find . -maxdepth 1 -type d -not -name ".git" -not -name "." -not -name "setup.sh")
-
-# Ask if each folder should be included
-for dir in $dirs; do
-  if ask "Include ${dir/'./'/''}?"; then
-
-    # Get the files and folders we should link
-    links=$(find $dir -maxdepth 2 -not -name ".config" -not -wholename $dir)
-    for link in $links; do
-
-      # If there is a setup.sh, run it
-      if [[ $link =~ .*setup.sh$ ]]; then
-        echo "Running setup script: $link"
-        source $link
-        continue
-      fi
-
-      # Check if the destination alredy exist
-      dest=${link/$dir/$HOME}
-      if [ ! -e "$dest" ]; then 
-        ln -nsv $(realpath $link) $dest
-      else
-        echo "Symbolic link not created: '$dest' already exists." 
-
-        # Ask if we should remove it and link
-        if ask "Remove [$dest]?"; then
-          rm -rf $dest
-          ln -nsv $(realpath $link) $dest
-        fi 
-      fi
-    done
+for plugin in "${!plugins[@]}"; do
+  if [ ! -e "$PLUGINS/$plugin" ]; then
+    bash -c "${plugins[$plugin]} $PLUGINS/$plugin"
   fi
 done
