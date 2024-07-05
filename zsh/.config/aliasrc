@@ -1,5 +1,4 @@
-alias v='nvim'
-alias vim='nvim'
+alias v='vim'
 alias sudo='sudo '
 alias pls='sudo $(fc -ln -1)'
 
