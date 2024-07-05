@@ -70,5 +70,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Shell integrations
+oh-my-posh --version >/dev/null 2>&1 && eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/telf.toml)"
 fzf --version >/dev/null 2>&1 && eval "$(fzf --zsh)"
 zoxide --version >/dev/null 2>&1 && eval "$(zoxide init zsh)"
