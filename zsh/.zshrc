@@ -44,6 +44,30 @@ chpwd() {
   ls
 }
 
+# set tmux window name to hostname
+ssh() {
+  if [ -n "$TMUX" ]; then
+    # filter out -flags
+    local host=""
+    for arg in "$@"; do
+      if [[ "$arg" != -* ]]; then
+        host="$arg"
+        break
+      fi
+    done
+
+    if [ -n "$host" ]; then
+      tmux rename-window "$host"
+    fi
+
+    command ssh "$@"
+
+    tmux set-window-option automatic-rename on
+  else
+    command ssh "$@"
+  fi
+}
+
 # Turn off error beep
 unsetopt beep
 
