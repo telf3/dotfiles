@@ -41,7 +41,7 @@ set showmode
 set undofile
 
 " Don't create swapfile
-" set noswapfile
+set noswapfile
 
 " Enable mouse in visual mode
 set mouse=a
